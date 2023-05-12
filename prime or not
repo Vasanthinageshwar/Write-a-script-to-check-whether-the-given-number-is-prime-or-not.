@@ -1,0 +1,21 @@
+#!/bin/sh
+echo "Enter a number : "
+read n
+count=0
+i=2
+while [ $i -lt `expr $n / 2 ` ]
+do
+if [ ` expr $n % $i ` -eq 0 ]
+then
+count=`expr $count + 1`
+break
+fi
+i=`expr $i + 1`
+done
+ 
+if [ $count -eq 0 ]
+then
+echo "$n is a prime number"
+else
+echo "$n is not a prime number"
+fi
